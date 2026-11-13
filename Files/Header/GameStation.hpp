@@ -7,7 +7,6 @@ enum class Skip : std::uint8_t {
     Turns,
     Rounds
 };
-
 struct UserChoice {
     Character* character{nullptr};
     Skip skip{Skip::None};

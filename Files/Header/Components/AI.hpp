@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-
 enum class TargetingType : std::uint8_t {
     HighestHp,
     LowestHp,
