@@ -1,6 +1,6 @@
-#include "../../../Header/Logger/Presets.hpp"
-#include "../../../Header/Logger/Logger.hpp"
-#include "../../../Header/Components/Vitals/Characters.hpp"
+#include "../../Header/Logger/Presets.hpp"
+#include "../../Header/Logger/Logger.hpp"
+#include "../../Header/Components/Vitals/Characters.hpp"
 
 void Preset::Char::Preview(const Character &c, Type type) {
     switch (type) {
