@@ -28,6 +28,11 @@ namespace Base {
         double strength{1.0};
         double durability{1.0};
     };
+    struct Damage final {       //   normal,  reinforcement, technique, both
+        enum class Type : std::uint8_t { Regular, Soul, Surehit, Existence };
+        double damage{1.0};
+        Type type{Type::Regular};
+    };
     struct Equipment final {
         
     };
