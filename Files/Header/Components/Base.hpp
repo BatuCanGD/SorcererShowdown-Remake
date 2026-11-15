@@ -30,7 +30,7 @@ namespace Base {
     };
     struct Damage final {       //   normal,  reinforcement, technique, both
         enum class Type : std::uint8_t { Regular, Soul, Surehit, Existence };
-        double damage{1.0};
+        double amount{1.0};
         Type type{Type::Regular};
     };
     struct Equipment final {
