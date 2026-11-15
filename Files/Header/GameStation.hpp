@@ -14,7 +14,6 @@ struct UserChoice {
 
 namespace Game {
     inline bool run() {
-        UserChoice pc;
-        return true;
+        return false;
     }
 }

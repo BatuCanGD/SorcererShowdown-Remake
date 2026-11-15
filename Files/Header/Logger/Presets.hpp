@@ -1,8 +1,11 @@
 #pragma once
+#include <cstdint>
+
 struct Character;
+
 namespace Preset {
-    namespace Characters {
-        void PreviewCharacter(const Character& c);
-        void IntroduceCharacter(const Character& c);
+    enum class Type : std::uint8_t { Basic, Detailed };
+    namespace Char {
+        void Preview(const Character& c, Type type = Type::Basic);
     }
 }

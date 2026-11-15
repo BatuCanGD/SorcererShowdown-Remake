@@ -1,34 +1,34 @@
 #pragma once
-#include "Identity.hpp"
 #include "AI.hpp"
+#include "StatusEffect.hpp"
+#include <vector>
 
 namespace Base {
     struct Brain final {
-        TargetedType targeted_type;
-        TargetingType targeting_type;
-        ResourcePolicy resource_policy;
-        FightingStyle fighting_style;
-        FightingPreference fighting_preference;
+        TargetedType targeted_type{TargetedType::Mixed};
+        TargetingType targeting_type{TargetingType::Adaptive};
+        ResourcePolicy resource_policy{ResourcePolicy::Adaptive};
+        FightingStyle fighting_style{FightingStyle::Mixed};
+        FightingPreference fighting_preference{FightingPreference::Mixed};
     };
-    struct Status final {
-        int stun_timer{3};
-        bool is_stunned{false};
-        bool is_invincible{false};
+    struct Stun final {
+        std::uint8_t timer{3};
+        bool is_true{false};
+    };
+    struct State final {
+        std::vector<StatusEffect> status_effects;
+        Stun stun;
+    };
+    struct Health final {
+        double current{1.0};
+        double max{1.0};
     };
     struct Stats final {
-        double health{1.0};
-        double health_max{1.0};
-        double strenght{1.0};
+        Health health{};
+        double strength{1.0};
         double durability{1.0};
-        Status status;
     };
     struct Equipment final {
         
-    };
-    struct Character {
-        Identity identity;
-        Equipment equipment;
-        Stats stats;
-        Brain brain;
     };
 }
