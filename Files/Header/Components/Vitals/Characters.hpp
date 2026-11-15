@@ -9,7 +9,11 @@ struct Character {
     Base::Stats stats;
     Base::State state;
     Base::Brain brain;
+
+    virtual ~Character() = default;
 };
 struct CurseUser : Character {
+    Sorcery::Jujutsu jujutsu;
     Sorcery::CursedEnergy cursed_energy;
+    Sorcery::ReverseCursedTechnique rct;
 };

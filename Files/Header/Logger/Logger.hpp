@@ -4,9 +4,9 @@
 
 namespace Log {
     namespace Internal {
-        inline constexpr void WriteMessage(bool newline, std::string_view sv, std::format_args ags) {
+        inline constexpr void WriteMessage(bool n, std::string_view sv, std::format_args ags) {
             std::vprint_unicode(stdout, sv, ags);
-            if (newline) std::fputc('\n', stdout);
+            if (n) std::fputc('\n', stdout);
         }
         inline constexpr void WriteError(std::string_view sv, std::format_args ags) {
             std::vprint_unicode(stderr, sv, ags);
