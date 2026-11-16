@@ -1,7 +1,7 @@
 #pragma once 
+#include "Base.hpp"
 #include "../Identity.hpp"
-#include "../Base.hpp"
-#include "../Sorcery.hpp"
+#include "../SorceryVitals/Sorcery.hpp"
 
 struct Character {
     Identity identity;
@@ -12,8 +12,10 @@ struct Character {
 
     virtual ~Character() = default;
 };
-struct CurseUser : Character {
+struct Sorcerer final : Character {
+    enum class Type : std::uint8_t { Sorcerer, CursedSpirit };
     Sorcery::Jujutsu jujutsu;
     Sorcery::CursedEnergy cursed_energy;
+    Sorcery::Amplification amplification;
     Sorcery::ReverseCursedTechnique rct;
 };

@@ -1,6 +1,7 @@
 #pragma once
-#include "AI.hpp"
-#include "StatusEffect.hpp"
+#include "../AI.hpp"
+#include "../StatusEffect.hpp"
+#include "../CursedTool.hpp"
 #include <vector>
 
 namespace Base {
@@ -10,6 +11,9 @@ namespace Base {
         ResourcePolicy resource_policy{ResourcePolicy::Adaptive};
         FightingStyle fighting_style{FightingStyle::Mixed};
         FightingPreference fighting_preference{FightingPreference::Mixed};
+    };
+    struct Trait final {
+        enum class Type : std::uint8_t { PhysicallyGifted };
     };
     struct Stun final {
         std::uint8_t timer{3};
@@ -34,6 +38,8 @@ namespace Base {
         Type type{Type::Regular};
     };
     struct Equipment final {
-        
+        std::optional<CursedTool> main;
+        std::optional<CursedTool> offhand;
+        std::optional<std::vector<CursedTool>> inventory;
     };
 }

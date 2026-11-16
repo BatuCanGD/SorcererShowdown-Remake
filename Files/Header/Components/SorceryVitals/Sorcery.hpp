@@ -14,7 +14,14 @@ namespace Sorcery {
     struct ReverseCursedTechnique final {
         double amount{1.0};
         bool unlocked{false};
-    };    
+    };
+    struct Reinforcement final {
+        double cur{0.0};
+    };
+    struct Amplification final {
+        enum class Status : std::uint8_t { Disabled, Inactive, Active };
+        Status status{Status::Disabled};
+    };
     struct CursedEnergy final {
         enum class Efficiency : std::uint8_t { Wasteful, Inefficient, Stable, Efficient, Peak };
         Output output;
