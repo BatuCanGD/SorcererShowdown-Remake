@@ -1,9 +1,14 @@
 #pragma once
 #include <cstdint>
+#include <memory>
+#include <vector>
+#include <optional>
+
+struct Shikigami;
 
 namespace Sorcery {
     struct Jujutsu final {
-
+        std::vector<std::unique_ptr<Shikigami>> shikigami;
     };
     struct Output final {
         enum class Status : std::uint8_t { BurntOut, Stable, Boosted, Peak };
