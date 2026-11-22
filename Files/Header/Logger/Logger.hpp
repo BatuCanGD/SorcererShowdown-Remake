@@ -1,5 +1,7 @@
 #pragma once
 #include <format>
+#include <string>
+#include <vector>
 #include <print>
 
 namespace Log {
@@ -26,4 +28,16 @@ namespace Log {
         Internal::WriteError(f.get(), std::make_format_args(a...));
     }
 }
-
+namespace Queue {
+    inline std::vector<std::string> queue;
+    
+    inline void Add(const std::string& s){
+        queue.push_back(s);
+    }
+    inline void Print() {
+        for (const auto& c : queue){
+            Log::Line("{}", c);
+        }
+        queue.clear();
+    }
+}

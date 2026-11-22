@@ -4,7 +4,6 @@
 #include "Damage.hpp"
 #include <optional>
 
-
 struct CursedTool final {
     Identity identity;
     Damage damage;

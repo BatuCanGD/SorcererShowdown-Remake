@@ -29,4 +29,17 @@ namespace Sorcery {
         double max{1.0};
         Efficiency efficiency{Efficiency::Stable};
     };
+    namespace Shikigami {
+        enum class SummonType   : std::uint8_t {Inactive,Passive,Active};
+        enum class Behaviour    : std::uint8_t {Passive,Active};
+        enum class SupportType  : std::uint8_t {None,Health,CursedEnergy,Output};
+
+        struct Adaptation final {
+            std::uint8_t next{5}; // amount of turns on active to increment current
+            std::uint8_t cur{0};
+            std::uint8_t max{4};
+            enum class Type : std::uint8_t {HpBoost,CeBoost,OutBoost,AbilityUnlock  };
+            Type type;
+        };
+    }
 }
