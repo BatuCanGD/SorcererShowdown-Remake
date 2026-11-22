@@ -3,19 +3,30 @@
 #include "../Identity.hpp"
 #include "../SorceryVitals/Sorcery.hpp"
 
-struct Character {
-    Identity identity;
-    Base::Equipment equipment;
-    Base::Stats stats;
-    Base::State state;
-    Base::Brain brain;
-
-    virtual ~Character() = default;
+enum class Type : std::uint8_t { 
+    Sorcerer, 
+    CursedSpirit 
 };
+
+struct Dummy {
+    Identity identity;
+    Base::State state;
+    Base::Stats stats;
+
+    virtual ~Dummy() = default;
+};
+
+struct Character : Dummy {
+    Base::Equipment equipment;
+    Base::Brain brain;
+};
+
 struct Sorcerer final : Character {
-    enum class Type : std::uint8_t { Sorcerer, CursedSpirit };
     Sorcery::Jujutsu jujutsu;
     Sorcery::CursedEnergy cursed_energy;
     Sorcery::Amplification amplification;
     Sorcery::ReverseCursedTechnique rct;
+};
+struct Shikigami final : Character {
+    Sorcery::CursedEnergy cursed_energy;
 };
