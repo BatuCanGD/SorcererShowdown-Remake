@@ -1,6 +1,7 @@
 #pragma once
 #include "Colours.hpp"
 #include <string>
+#include <atomic>
 #include <format>
 
 struct Identity {
@@ -11,7 +12,7 @@ struct Identity {
 };
 
 inline size_t GetID() {
-    static size_t id = 0;
+    static std::atomic_size_t id = 0;
     return ++id;
 }
 
@@ -20,7 +21,7 @@ namespace GetInfo {
         return id.color + id.name + (id.color.empty() ? "" : Colour::Clear);
     }
     inline const std::string Extra(const Identity& id) {
-        return Name(id) + "\n﹂" + id.desc;
+        return Name(id) + "\n|->" + id.desc;
     }
 }
 namespace Introduce {
