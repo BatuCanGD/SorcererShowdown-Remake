@@ -5,7 +5,7 @@ struct Character;
 
 using CharacterContainer = std::vector<std::unique_ptr<Character>>;
 
-struct Holder final {
+struct CharacterStorage final {
     CharacterContainer field;
     CharacterContainer queue;
 };

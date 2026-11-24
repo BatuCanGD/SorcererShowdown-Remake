@@ -6,7 +6,7 @@
 
 struct Identity {
     std::string name{"John Judas"};
-    std::string color{Colour::Ansi256::f_Gold};
+    std::string color{Colour::A256::f_Gold};
     std::string desc{"The most fearless warrior of all time"};
     size_t id{};
 };

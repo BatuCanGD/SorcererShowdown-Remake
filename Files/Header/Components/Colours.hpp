@@ -18,9 +18,9 @@ namespace Colour {
         inline constexpr const char* f_BrightBlue     = "\x1b[94m";
         inline constexpr const char* f_BrightMagenta  = "\x1b[95m";
         inline constexpr const char* f_BrightCyan     = "\x1b[96m";
-        inline constexpr const char* b_Red  = "\x1b[41m";   
+        inline constexpr const char* b_Red            = "\x1b[41m";   
     }
-    namespace Ansi256 {
+    namespace A256 {
         inline constexpr const char* f_LightPink      = "\x1b[38;5;183m";
         inline constexpr const char* f_Orange         = "\x1b[38;5;208m";
         inline constexpr const char* f_Gold           = "\x1b[38;5;214m";

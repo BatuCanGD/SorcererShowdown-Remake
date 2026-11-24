@@ -5,7 +5,7 @@ struct Character;
 
 using CharacterContainer = std::vector<std::unique_ptr<Character>>;
 
-namespace BattlefieldManager {
+namespace Battlefield {
     void HandleDomainExpansions(CharacterContainer cc);
     void HandleTheDead(CharacterContainer cc);
 }
