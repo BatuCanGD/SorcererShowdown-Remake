@@ -3,11 +3,7 @@
 #include "Vitals/Sorcery.hpp"
 #include "Identity.hpp"
 
-enum class TurnResult : std::uint8_t {
-    Completed,
-    Skipped,
-    Failed
-};
+using TurnResult = std::vector<std::string>;
 
 struct Dummy {
     Identity identity;
