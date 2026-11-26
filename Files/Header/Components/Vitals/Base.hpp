@@ -8,11 +8,8 @@ namespace Base {
     enum class Trait : std::uint8_t { PhysicallyGifted };
 
     struct Brain final {
-        TargetedType targeted_type{TargetedType::Mixed};
-        TargetingType targeting_type{TargetingType::Adaptive};
-        ResourcePolicy resource_policy{ResourcePolicy::Adaptive};
-        FightingStyle fighting_style{FightingStyle::Mixed};
-        FightingPreference fighting_preference{FightingPreference::Mixed};
+        AI::Settings settings;
+        AI::Memory memory;
     };
     struct Stun final {
         std::uint8_t timer{3};
