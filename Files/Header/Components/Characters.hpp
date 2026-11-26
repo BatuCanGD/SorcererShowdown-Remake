@@ -21,7 +21,7 @@ public:
     TurnResult DoTurn() override;
 };
 
-struct CurseUser final : Character {
+struct CurseUser : Character {
     enum class Type : std::uint8_t { Sorcerer, CursedSpirit };
 public:
     Sorcery::Jujutsu jujutsu;
