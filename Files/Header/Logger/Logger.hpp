@@ -30,11 +30,13 @@ namespace Log {
 }
 namespace Queue {
     inline std::vector<std::string> queue;
-    
-    inline void Add(const std::string& s){
-        queue.push_back(s);
+    inline void Clear() {
+        queue.clear();
     }
-    inline void Print() {
+    inline void Add(std::string_view s){
+        queue.emplace_back(std::string(s));
+    }
+    inline void Flush() {
         for (const auto& c : queue){
             Log::Line("{}", c);
         }
