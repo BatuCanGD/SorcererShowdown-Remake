@@ -39,5 +39,7 @@ struct Domain {
     Refinement refinement{Refinement::Standard};
     SurehitType surehit_type{SurehitType::Normal};
 
-    virtual void SpecialSurehit(Character& tr);
+    inline virtual bool SpecialSurehit(Character& tr) {
+        return false;
+    }
 };
