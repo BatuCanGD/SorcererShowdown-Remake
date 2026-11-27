@@ -3,6 +3,9 @@
 #include "Damage.hpp"
 #include "Vitals/Base.hpp"
 
+struct Character;
+struct CurseUser;
+
 enum class DomainType : std::uint8_t {
     Incomplete,
     Closed,
@@ -24,18 +27,17 @@ enum class Refinement : std::uint8_t {
     Absolue
 };
 
-struct Domain final {
+struct Domain {
     Identity identity;
-
     Base::Health health{};
     Base::Stat durability{};
     Damage damage{ .type = Damage::Type::Surehit };
-    
     double cost{1.0};
     short range{10};
     bool is_active{false};
-
     DomainType type{DomainType::Closed};
     Refinement refinement{Refinement::Standard};
     SurehitType surehit_type{SurehitType::Normal};
+
+    virtual void SpecialSurehit(Character& tr);
 };

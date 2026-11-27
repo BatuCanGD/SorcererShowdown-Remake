@@ -4,10 +4,13 @@
 #include <atomic>
 #include <format>
 
+
+
+
 struct Identity {
-    std::string name{"John Judas"};
+    std::string name{"Unknown"};
     std::string color{Colour::A256::f_Gold};
-    std::string desc{"The most fearless warrior of all time"};
+    std::string desc{""};
     size_t id{};
 };
 
